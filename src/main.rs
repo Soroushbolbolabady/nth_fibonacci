@@ -14,11 +14,13 @@ fn main() {
     let inp: usize = inp.trim().parse().expect("You have to inter a number");
 
     
-    if inp != 2 {
-        let a = generate_fibonacci(inp);
-        println!("The {inp}th number in Fibonacci is : {a}");
+    if inp < 1{
+        println!("Invalid Number");
+    }else if inp == 1{
+        println!("The first number in Fibonacci is : 1");
     }else{
-        println!("The 2nd number in Fibonacci is : 1");
+        let res = generate_fibonacci(inp);
+        println!("The {inp}th in fibonacci is: {res}");
     }
 
 }
@@ -29,7 +31,7 @@ fn generate_fibonacci (x: usize) -> usize {
     let mut new = 0;
 
 
-    let mut i = 3;
+    let mut i = 2;
     while i <= x {
         new = first + second;
         first = second;
